@@ -5,6 +5,15 @@ public class Circle {
 	private double yC;
 	private double r;
 	
+	public Circle(double xC, double yC, double r){
+		this.xC=xC;
+		this.yC=yC;
+		if (r<=0)
+			throw new IllegalArgumentException("Il raggio deve essere positivo");
+		else
+			this.r=r;
+	}
+	
 	public double getXC() {
 		return xC;
 	}
@@ -27,16 +36,6 @@ public class Circle {
 			this.r=r;
 	}
 	
-	public Circle(double xC, double yC, double r){
-		this.xC=xC;
-		this.yC=yC;
-		if (r<=0)
-			throw new IllegalArgumentException("Il raggio deve essere positivo");
-		else
-			this.r=r;
-		
-	}
-	
 	public double getXMin(){
 		return this.xC - this.r;
 	}
@@ -54,7 +53,7 @@ public class Circle {
 	}
 	
 	public boolean contains(Circle c){
-		
+		return true;
 	}
 
 }
