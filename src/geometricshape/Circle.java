@@ -65,5 +65,14 @@ public class Circle{
 		return v;
 	}
 	
-	
+	public boolean contains(Triangle t){
+		boolean v;
+		if(this.getXMin() <= t.getXMin() && this.getYMin() <= t.getYMin() && this.getXMax() >= t.getXMax() && this.getYMax() >= t.getYMax() ){
+			v=true;
+		}
+		else{
+			v=false;
+		}
+		return v;
+	}
 }
