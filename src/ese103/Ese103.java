@@ -1,6 +1,6 @@
 package ese103;
 
-import cerchio.Circle;
+import geometricshape.*;
 
 public class Ese103 {
 
@@ -13,13 +13,18 @@ public class Ese103 {
 		
 		Circle a, b;
 		
-		for(int i=0; i<circleArray.length; i++){
-			a = circleArray[i];
-			b = circleArray[(i+1) % circleArray.length];
-			if(a.contains(b))
-				System.out.println(a + " contiene " + b);
-			else
-				System.out.println(a + " NON contiene " + b);
+		for(int i = 0;i<circleArray.length;i++){
+			a=circleArray[i];
+			for(int j=0;j<circleArray.length;j++){
+				b=circleArray[j];
+				if(a.contains(b)){
+					System.out.println(a + " Contiene " + b);
+				}
+				else{
+					System.out.println(a + " NON contiene " + b);
+				}
+			}
+			
 		}
 
 	}
