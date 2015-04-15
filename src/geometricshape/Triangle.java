@@ -1,6 +1,6 @@
 package geometricshape;
 
-public class Triangle {
+public class Triangle extends GeometricShape{
 	
 	private double xV;
 	private double yV;
@@ -44,46 +44,26 @@ public class Triangle {
 		};
 	}
 
-	
+	@Override
 	double getXMin() {
 		return this.xV;
 	}
 
-	
+	@Override
 	double getXMax() {
 		return this.xV + this.l;
 	}
 
-	
+	@Override
 	double getYMin() {
 		return this.yV;
 	}
 
-	
+	@Override
 	double getYMax() {
 		return this.yV + this.l * Math.sqrt(3)/2;
 	}
 	
-	public boolean contains(Triangle t){
-		boolean v;
-		if(this.getXMin() <= t.getXMin() && this.getYMin() <= t.getYMin() && this.getXMax() >= t.getXMax() && this.getYMax() >= t.getYMax() ){
-			v=true;
-		}
-		else{
-			v=false;
-		}
-		return v;
-	}
 	
-	public boolean contains(Circle c){
-		boolean v;
-		if(this.getXMin() <= c.getXMin() && this.getYMin() <= c.getYMin() && this.getXMax() >= c.getXMax() && this.getYMax() >= c.getYMax() ){
-			v=true;
-		}
-		else{
-			v=false;
-		}
-		return v;
-	}
 
 }

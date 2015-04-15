@@ -5,45 +5,37 @@ import geometricshape.*;
 public class Ese103 {
 
 	public static void main(String[] args) {
-		Circle circleArray[] = new Circle[3];
-		Triangle triangleArray[] = new Triangle[2];
+	
+		GeometricShape shapeArray[]= new GeometricShape[5];
 		
-		circleArray[0] = new Circle(0,0,1);
-		circleArray[1] = new Circle(0.5,0.5,0.5);
-		circleArray[2] = new Circle(1,1,1);
+		shapeArray[0]= new Circle(2,2,4);
+		shapeArray[1]= new Triangle(7,1,5);
+		shapeArray[2]= new Circle(5,1,7);
+		shapeArray[3]= new Triangle(1,4,4);
+		shapeArray[4]= new Circle(2,1,2);
 		
-		Circle c;
-		Triangle t;
-		
-		for(int i = 0;i<circleArray.length;i++){
-			c=circleArray[i];
-			for(int j=0;j<triangleArray.length;j++){
-				t=triangleArray[j];
-				if(c.contains(t)){
-					System.out.println(c + " Contiene " + t);
-				}
-				else{
-					System.out.println(c + " NON contiene " + t);
-				}
-			}
-			
-		}
-		
-		
-		for(int i = 0;i<triangleArray.length;i++){
-			t=triangleArray[i];
-			for(int j=0;j<circleArray.length;j++){
-				c=circleArray[j];
-				if(t.contains(c)){
-					System.out.println(t + " Contiene " + c);
-				}
-				else{
-					System.out.println(t + " NON contiene " + c);
-				}
-			}
-			
-		}
 
+		GeometricShape a,b;
+		
+		for(int i = 0;i<shapeArray.length;i++){
+			a=shapeArray[i];
+			for(int j=0;j<shapeArray.length;j++){
+				b=shapeArray[j];
+				if(a.contains(b)){
+					System.out.println(a + " Contiene " + b);
+				}
+				else{
+					System.out.println(a + " NON contiene " + b);
+				}
+			}
+			
+		}
+		
+		
+		
+		
 	}
 
 }
+
+

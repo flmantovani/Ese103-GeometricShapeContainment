@@ -1,6 +1,6 @@
 package geometricshape;
 
-public class Circle{
+public class Circle extends GeometricShape{
 	private double xC;
 	private double yC;
 	private double r;
@@ -9,7 +9,7 @@ public class Circle{
 		this.xC=xC;
 		this.yC=yC;
 		if(r<=0)
-			throw new IllegalArgumentException("The radius must be positive");
+			throw new IllegalArgumentException();
 		else
 			this.r=r;	
 	}
@@ -30,49 +30,36 @@ public class Circle{
 		return r;
 	}
 	
-	
+	/**
+	 * 
+	 * @param r
+	 */
 	public void setR(double r) {
 		if (r<=0)
-			throw new IllegalArgumentException("The radius must be positive");
+			throw new IllegalArgumentException("Il raggio deve essere positivo");
 		else
 			this.r=r;
 	}
 	
+	@Override
 	public double getXMin(){
 		return this.xC - this.r;
 	}
 	
+	@Override
 	public double getXMax(){
 		return this.xC + this.r;
 	}
 	
+	@Override
 	public double getYMin(){
 		return this.yC - this.r;
 	}
 	
+	@Override
 	public double getYMax(){
 		return this.yC + this.r;
 	}
 	
-	public boolean contains(Circle c){
-		boolean v;
-		if(this.getXMin() <= c.getXMin() && this.getYMin() <= c.getYMin() && this.getXMax() >= c.getXMax() && this.getYMax() >= c.getYMax() ){
-			v=true;
-		}
-		else{
-			v=false;
-		}
-		return v;
-	}
 	
-	public boolean contains(Triangle t){
-		boolean v;
-		if(this.getXMin() <= t.getXMin() && this.getYMin() <= t.getYMin() && this.getXMax() >= t.getXMax() && this.getYMax() >= t.getYMax() ){
-			v=true;
-		}
-		else{
-			v=false;
-		}
-		return v;
-	}
 }
